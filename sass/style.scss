@@ -1,0 +1,921 @@
+@use "color";
+@use "breakpoints";
+
+body {
+  font-family: "Quicksand", "M PLUS Rounded 1c", sans-serif;
+  color: color.$cl-black;
+
+  &.is-fixed {
+    overflow: hidden;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  padding: 6px 10px;
+  margin: 0 auto;
+
+  &--x {
+    width: fit-content;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__icon--x {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background-color: color.$black;
+      left: -1px;
+      z-index: -1;
+      transition: background-color 0.3s;
+    }
+  }
+
+  &__icon-path {
+    fill: color.$white;
+  }
+
+  &__text {
+    color: color.$white;
+    font-size: 20px;
+    margin-left: 10px;
+    letter-spacing: 0.05em;
+  }
+}
+
+// header
+.header {
+  background-image: linear-gradient(
+    to bottom,
+    color.$color-blue,
+    color.$color-green
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  &__container {
+    width: 100%;
+    position: relative;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: inline-block;
+    padding: 14px 24px;
+    font-size: 21px;
+    font-weight: bold;
+    color: color.$white;
+  }
+
+  &__menu-button {
+    width: 36px;
+    height: 21px;
+    position: relative;
+    border: none;
+    background: transparent;
+    right: 24px;
+  }
+
+  &__menu-button.is-checked {
+    .header-icon__bar {
+      &:nth-child(1) {
+        top: 10px;
+        transform: rotate(30deg);
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        top: 10px;
+        transform: rotate(-30deg);
+      }
+    }
+  }
+
+  &-icon__bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 3px;
+    border-radius: 6px;
+    background: color.$white;
+    transition:
+      transform 0.3s linear,
+      top 0.3s linear;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 9px;
+    }
+    &:nth-child(3) {
+      top: 18px;
+    }
+  }
+
+  &__contents {
+    display: none;
+    height: calc(100vh - 81px);
+    border-top: 1px solid color.$white;
+    padding-top: 60px;
+  }
+
+  &__nav-item {
+    text-align: center;
+
+    & + & {
+      margin-top: 24px;
+    }
+  }
+
+  &__nav-item--x {
+    position: relative;
+    left: -66px;
+  }
+}
+
+// fv
+.fv {
+  padding-top: 81px;
+  width: 100%;
+  position: relative;
+
+  &__contents {
+    position: absolute;
+    bottom: 26px;
+    left: 0;
+    max-width: 380px;
+    width: 100%;
+    background: rgba(color.$white, 0.65);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 18px;
+  }
+
+  &__heading-main {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__heading-sub {
+    display: block;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+}
+
+// section共通設定
+.section {
+  padding: 48px 0;
+
+  &__inner {
+    padding-inline: 25px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__head-main {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  &__head-sub {
+    font-size: 15px;
+    letter-spacing: 0.2em;
+  }
+
+  &__lead-text {
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  &__contents {
+    margin-top: 40px;
+  }
+}
+
+// skills
+.skills {
+  background-color: color.$bg-light;
+
+  &__list {
+    margin-top: 20px;
+    line-height: 3;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  &__item {
+    display: flex;
+    width: 200px;
+  }
+
+  &__icon {
+    opacity: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+  }
+
+  &__name {
+    font-size: 25px;
+    vertical-align: middle;
+    padding-left: 13px;
+    font-weight: bold;
+  }
+}
+
+// works
+.works {
+  &__contents {
+    margin-top: 20px;
+  }
+
+  &__list {
+    text-align: center;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 55px;
+    }
+  }
+
+  &__card {
+    padding: 15px;
+    border-radius: 3px;
+    display: block;
+    height: 100%;
+    box-shadow: 0 4px 15px 0 rgba(color.$black, 0.3);
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+  }
+
+  &__item-img {
+    margin-bottom: 12px;
+  }
+
+  &__item-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    min-height: calc(1.5em * 2); // 2行分の高さを確保
+  }
+
+  &__item-link {
+    font-size: 14px;
+    margin-top: auto; // 一番下へ押し下げる
+  }
+}
+
+// about
+.about {
+  background-color: color.$bg-light;
+
+  &__container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text-contents {
+    margin-top: 20px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.6;
+
+    & + & {
+      margin-top: 1em;
+    }
+  }
+
+  &__img {
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+// contact
+.contact {
+  &__form {
+    margin-top: 20px;
+    font-family: "Quicksand", "M PLUS Rounded 1c", sans-serif;
+  }
+
+  &__text {
+    margin-top: 32px;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 30px;
+    }
+
+    select {
+      appearance: none;
+      background: url(../img/select-arrow.png) no-repeat center right 16px /
+        9.451px 6.969px;
+      background: #e3f0ec;
+    }
+  }
+
+  &__label {
+    display: block;
+    padding-block: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__must {
+    color: color.$cl-must;
+    margin-left: 4px;
+  }
+
+  &__input-field {
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: color.$bg-green-l;
+    font-size: 18px;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  &__input-field-w {
+    height: auto;
+    line-height: 1.5;
+  }
+
+  &__button {
+    background-color: color.$bg-dark;
+    color: color.$white;
+    font-size: 20px;
+    padding: 16px 50px;
+    display: block;
+    margin: 45px auto 0;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px 0 rgba(color.$black, 0.3);
+    cursor: pointer;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+  }
+
+  &__privacy {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: 16px;
+    color: color.$black;
+    transition: opacity 0.3s;
+
+    input[type="checkbox"] {
+      width: auto;
+      height: auto;
+      margin-right: 10px;
+    }
+  }
+
+  /* チェックボックス用のラベル */
+  label[for="privacy"] {
+    font-weight: normal;
+    font-size: 16px;
+    color: color.$black;
+  }
+}
+
+// ページトップへボタン
+#page-top {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background-color: color.$color-blue;
+  border-radius: 50%;
+  transition: opacity 0.3s;
+
+  &::before {
+    content: "TOP";
+    font-size: 15px;
+    color: color.$white;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    top: 32%;
+    left: 49%;
+    translate: -50%;
+    font-weight: bold;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+// footer
+.footer {
+  background-color: color.$bg-light;
+
+  text-align: center;
+  padding: 10px;
+
+  &__copy {
+    font-size: 11px;
+    font-family: "Quicksand", "M PLUS Rounded 1c", sans-serif;
+  }
+}
+
+/*------------------
+// tb
+------------------*/
+@include breakpoints.mq(tb) {
+  .section {
+    &__inner {
+      max-width: 700px;
+    }
+
+    &__head-main {
+      font-size: 54px;
+    }
+  }
+
+  .fv {
+    &__contents {
+      bottom: 30px;
+      height: auto;
+      max-width: 500px;
+      padding-left: 30px;
+    }
+  }
+
+  .skills {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .works {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8%;
+    }
+
+    &__item {
+      & + & {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .about {
+    &__container {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+
+    &__text-contents {
+      margin-top: 0;
+      flex: 1;
+    }
+
+    &__img {
+      flex: 1;
+    }
+  }
+}
+
+/*------------------
+// pc
+------------------*/
+@include breakpoints.mq(pc) {
+  .wrapper {
+    display: flex;
+  }
+
+  .main {
+    flex-basis: 79.2%;
+  }
+
+  .header {
+    position: relative;
+    flex-basis: 20.8%;
+    padding: 35px 20px;
+
+    &__container {
+      width: 160px;
+      margin: 0 auto;
+      position: sticky;
+      top: 35px; //ヘッダーのパディングトップの数値に合わせる
+    }
+
+    &__logo {
+      padding: 14px 10px;
+      font-size: 30px;
+    }
+
+    &__menu-button {
+      display: none;
+    }
+
+    &__contents {
+      display: block;
+      border: none;
+      padding-top: 20px;
+      line-height: 0.5;
+    }
+
+    &__nav-item--x {
+      width: fit-content;
+      left: 8px;
+    }
+  }
+
+  .button {
+    width: 100%;
+    border-radius: 15px;
+
+    &:hover {
+      background-color: rgba(color.$white, 0.6);
+
+      .button__icon-path {
+        fill: color.$bg-dark;
+      }
+
+      .button__text {
+        color: color.$bg-dark;
+      }
+    }
+  }
+
+  .button--x {
+    padding: 0;
+    border-radius: 0;
+    left: 9px;
+
+    &:hover {
+      .button__icon-path--x {
+        fill: color.$black;
+      }
+
+      .button__icon--x {
+        &::after {
+          background-color: color.$white;
+        }
+      }
+    }
+  }
+
+  .section {
+    &__inner {
+      max-width: 880px;
+    }
+
+    &__head {
+      margin-bottom: 24px;
+    }
+
+    &__head-main {
+      font-size: 60px;
+    }
+  }
+
+  .fv {
+    padding-top: 0;
+
+    &__contents {
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      max-width: 590px;
+      padding-top: 24px;
+      padding-left: 96px;
+    }
+
+    &__heading-main {
+      font-size: 38px;
+    }
+
+    &__heading-sub {
+      font-size: 18px;
+      margin-top: 12px;
+    }
+  }
+
+  .skills {
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .works {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8%;
+    }
+
+    &__item {
+      & + & {
+        margin-top: 0;
+      }
+    }
+
+    &__card {
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(color.$black, 0.3);
+      }
+    }
+  }
+
+  .contact {
+    &__item {
+      display: grid;
+
+      & + & {
+        margin-top: 50px;
+      }
+    }
+
+    &__label {
+      font-size: 21px;
+    }
+
+    &__input-field {
+      width: 70%;
+      height: 85px;
+      font-size: 20px;
+      padding: 30px;
+      border: 1px solid transparent;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 4px 15px 0 rgba(color.$black, 0.3);
+        border-color: color.$bg-dark;
+        outline: none;
+      }
+    }
+
+    &__input-field-w {
+      width: 100%;
+      height: 100%;
+    }
+
+    &__privacy {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    &__button {
+      padding: 20px 80px;
+
+      &:hover {
+         transform: translateY(-2px);
+        box-shadow: 0 6px 20px 2px rgba(color.$black, 0.35);
+      }
+
+      &:active {
+        transform: translateY(2px);
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// ==================================================
+// works/onomichi
+// ==================================================
+.work {
+  background-color: color.$bg-green-l;
+
+  &__inner {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* タイトル */
+  &__title {
+    border-left: 4px solid color.$cl-black;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-main {
+      font-size: 35px;
+      font-weight: 700;
+    }
+
+    &-sub {
+      font-size: 20px;
+      color: color.$cl-gray;
+    }
+  }
+
+  /* 画像 */
+  &__visual {
+    margin-top: 60px;
+    max-width: 400px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 4px 15px 0 rgba(color.$black, 0.3);
+    }
+  }
+
+  /* ボタン */
+  &__button {
+    margin-top: 35px;
+    text-align: center;
+  }
+
+  &__link {
+    text-decoration: underline;
+    transition: opacity 0.3s;
+  }
+
+  /* セクション */
+  &__section {
+    margin-top: 60px;
+  }
+
+  /* 見出し */
+  &__heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-left: 4px solid color.$cl-black;
+    padding-left: 10px;
+  }
+
+  /* テキスト */
+  &__text {
+    font-size: 16px;
+  }
+
+  /* リスト */
+  &__list {
+    font-size: 16px;
+
+    li {
+      position: relative;
+      padding-left: 15px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: color.$cl-gray;
+        top: 8px;
+        left: 0;
+      }
+
+      & + li {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  /* 一覧へ戻る */
+  &__back {
+    margin-top: 60px;
+    text-align: center;
+
+    &-link {
+      font-size: 20px;
+      text-decoration: underline;
+      transition: opacity 0.3s;
+    }
+  }
+}
+
+@include breakpoints.mq(tb) {
+  .work {
+    &__inner {
+      max-width: 800px;
+      flex-direction: row;
+      gap: 60px;
+    }
+
+    &__visual {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &__mock {
+      width: 100%;
+      max-height: 500px;
+      overflow-y: auto;
+      border: 1px solid color.$cl-gray;
+      box-shadow: 0 4px 15px 0 rgba(color.$black, 0.3);
+
+      img {
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        display: block;
+      }
+    }
+
+    &__left {
+      flex: 1.5;
+    }
+
+    &__right {
+      align-self: center;
+      flex: 1;
+    }
+
+    &__button {
+      margin-top: 0;
+      text-align: left;
+    }
+
+    &__section {
+      margin-top: 35px;
+    }
+
+    &__back {
+      margin-top: 50px;
+      text-align: right;
+    }
+  }
+}
+
+@include breakpoints.mq(pc) {
+  .work {
+    &__inner {
+      max-width: 1000px;
+    }
+
+    &__link,
+    &__back .work__back-link {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+// * {
+//   outline: 2px solid;
+// }

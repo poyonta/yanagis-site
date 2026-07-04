@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="robots" content="noindex" />
+    <title>e-tigaサイト紹介ページ</title>
+    <meta
+      name="description"
+      content="デイトラのWeb制作コース、中級編自由課題の架空サイトです。HTML/CSSを用いたレスポンシブ対応のデザインを実装しています。"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <main class="work">
+      <div class="work__inner">
+        <div class="work__left">
+          <!-- タイトル -->
+          <section class="work__header">
+            <h1 class="work__title">
+              <span class="work__title-main">e-tiga</span>
+              <span class="work__title-sub">架空サイト</span>
+            </h1>
+          </section>
+
+          <!-- メイン画像 -->
+          <section class="work__visual">
+            <div class="work__mock">
+              <picture>
+                <source
+                  srcset="../img/project/e-tiga-fullpage.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="../img/project/e-tiga-fullpage.jpg"
+                  alt="コーポレートサイトPC表示"
+                  width="1200"
+                  height="7304"
+                />
+              </picture>
+            </div>
+          </section>
+        </div>
+
+        <div class="work__right">
+          <!-- ボタン -->
+          <section class="work__button">
+            <a href="#" class="work__link" target="_blank">
+              サイトを見る(公開準備中)
+            </a>
+          </section>
+
+          <!-- 概要 -->
+          <section class="work__section">
+            <h2 class="work__heading">Overview</h2>
+            <p class="work__text">
+              デザインの意図を崩さないよう構造を整理しながら、HTML/CSSで忠実に再現しました。
+            </p>
+          </section>
+
+          <!-- 工夫した点 -->
+          <section class="work__section">
+            <h2 class="work__heading">Point</h2>
+            <ul class="work__list">
+              <li>
+                アニメーションを含む動きのある構成の中で、カンプ以外の仕様情報が少ない点を補いながら、ユーザーがストレスなく閲覧できるUIになるよう設計しました。
+              </li>
+              <li>
+                閲覧時にストレスが出ないよう、視線誘導と操作性を意識しています。
+              </li>
+            </ul>
+          </section>
+
+          <!-- 使用技術 -->
+          <section class="work__section">
+            <h2 class="work__heading">Tech</h2>
+            <p class="work__text">HTML / SCSS / JavaScript</p>
+          </section>
+
+          <!-- 制作範囲 -->
+          <section class="work__section">
+            <h2 class="work__heading">Role</h2>
+            <p class="work__text">
+              Design：デイトラ提供（課題カンプ）<br />
+              Coding：全て実装
+            </p>
+          </section>
+
+          <!-- 戻るボタン -->
+          <section class="work__back">
+            <a href="../index.html#works" class="work__back-link">
+              ← Works一覧へ戻る
+            </a>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

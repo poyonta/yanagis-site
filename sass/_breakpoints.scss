@@ -1,0 +1,20 @@
+// 　ブレークポイントとmixin
+@use "sass:map";
+
+$breakpoints: (
+  sp: "screen and (min-width: 600px)",
+  tb: "screen and (min-width: 900px)",
+  pc: "screen and (min-width: 1200px)",
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  $query: map.get($breakpoints, $breakpoint);
+
+  @if $query {
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @warn "ブレイクポイント '#{$breakpoint}' は定義されていません。";
+  }
+}

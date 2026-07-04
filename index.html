@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <!-- 検索にヒットしないようにするための記述です -->
+    <meta name="robots" content="noindex" />
+
+    <title>ポートフォリオサイト</title>
+    <meta
+      name="description"
+      content="フリーランスWEBコーダーをめざす、”やなぎ”のポートフォリオサイトです。只今、デイトラにてコツコツ勉強中"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <div class="header__top">
+            <div class="header__logo">Yanagi's<br />Portfolio</div>
+
+            <button
+              type="button"
+              id="js-button-drawer"
+              class="header__menu-button"
+            >
+              <span class="header-icon__bar"></span>
+              <span class="header-icon__bar"></span>
+              <span class="header-icon__bar"></span>
+            </button>
+          </div>
+
+          <div id="js-drawer" class="header__contents">
+            <nav class="header__nav">
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a href="#skills" class="header__nav-link button">
+                    <span class="button__icon"
+                      ><svg
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.0625 11.875C16.343 11.875 19 9.21797 19 5.9375C19 5.36971 18.9184 4.82051 18.7699 4.29728C18.6549 3.89649 18.1613 3.80743 17.8682 4.10058L15.0182 6.95058C14.9068 7.06192 14.7547 7.125 14.5988 7.125H12.4688C12.1422 7.125 11.875 6.85783 11.875 6.53123V4.40116C11.875 4.24533 11.9381 4.09315 12.0494 3.98185L14.8994 1.13185C15.1926 0.83866 15.0998 0.345109 14.7027 0.230073C14.1795 0.081631 13.6303 0 13.0625 0C9.78203 0 7.125 2.65703 7.125 5.9375C7.125 6.6463 7.25116 7.32909 7.47754 7.95996L0.738478 14.699C0.267174 15.1703 0 15.8123 0 16.4803C0 17.8719 1.12812 19 2.51971 19C3.18768 19 3.82967 18.7328 4.30098 18.2615L11.04 11.5225C11.6709 11.7525 12.3537 11.875 13.0625 11.875ZM2.96877 15.1406C3.20495 15.1406 3.4315 15.2345 3.59853 15.4015C3.76556 15.5685 3.85938 15.795 3.85938 16.0312C3.85938 16.2675 3.76556 16.494 3.59853 16.661C3.4315 16.828 3.20495 16.9219 2.96877 16.9219C2.73255 16.9219 2.506 16.828 2.33897 16.661C2.17194 16.494 2.07812 16.2675 2.07812 16.0312C2.07812 15.795 2.17194 15.5685 2.33897 15.4015C2.506 15.2345 2.73255 15.1406 2.96877 15.1406Z"
+                          class="button__icon-path"
+                        />
+                      </svg>
+                    </span>
+                    <span class="button__text">My Skills -</span>
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#works" class="header__nav-link button">
+                    <span class="button__icon"
+                      ><svg
+                        width="21"
+                        height="16"
+                        viewBox="0 0 21 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.2 0.635498C3.04172 0.635498 2.1 1.57078 2.1 2.72115V11.0638H4.2V2.72115H16.8V11.0638H18.9V2.72115C18.9 1.57078 17.9583 0.635498 16.8 0.635498H4.2ZM0.63 12.1066C0.282187 12.1066 0 12.3868 0 12.7323C0 14.114 1.12875 15.2351 2.52 15.2351H18.48C19.8712 15.2351 21 14.114 21 12.7323C21 12.3868 20.7178 12.1066 20.37 12.1066H0.63Z"
+                          class="button__icon-path"
+                        />
+                      </svg>
+                    </span>
+                    <span class="button__text">Works -</span>
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#about" class="header__nav-link button">
+                    <span class="button__icon"
+                      ><svg
+                        width="17"
+                        height="18"
+                        viewBox="0 0 17 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.8125 7.04143C13.8125 8.55504 13.3178 9.95324 12.4844 11.0876L16.6879 15.2657C17.1029 15.6779 17.1029 16.3473 16.6879 16.7595C16.2729 17.1717 15.5988 17.1717 15.1838 16.7595L10.9803 12.5814C9.83808 13.4124 8.43027 13.9005 6.90625 13.9005C3.09121 13.9005 0 10.8304 0 7.04143C0 3.25246 3.09121 0.182373 6.90625 0.182373C10.7213 0.182373 13.8125 3.25246 13.8125 7.04143ZM6.90625 11.79C7.53413 11.79 8.15587 11.6672 8.73595 11.4285C9.31604 11.1899 9.84312 10.8401 10.2871 10.3992C10.7311 9.95824 11.0833 9.43476 11.3235 8.85863C11.5638 8.28251 11.6875 7.66502 11.6875 7.04143C11.6875 6.41784 11.5638 5.80035 11.3235 5.22423C11.0833 4.64811 10.7311 4.12463 10.2871 3.68368C9.84312 3.24273 9.31604 2.89296 8.73595 2.65432C8.15587 2.41568 7.53413 2.29285 6.90625 2.29285C6.27837 2.29285 5.65663 2.41568 5.07654 2.65432C4.49646 2.89296 3.96938 3.24273 3.5254 3.68368C3.08142 4.12463 2.72923 4.64811 2.48895 5.22423C2.24867 5.80035 2.125 6.41784 2.125 7.04143C2.125 7.66502 2.24867 8.28251 2.48895 8.85863C2.72923 9.43476 3.08142 9.95824 3.5254 10.3992C3.96938 10.8401 4.49646 11.1899 5.07654 11.4285C5.65663 11.6672 6.27837 11.79 6.90625 11.79Z"
+                          class="button__icon-path"
+                        />
+                      </svg>
+                    </span>
+                    <span class="button__text">About -</span>
+                  </a>
+                </li>
+
+                <li class="header__nav-item">
+                  <a href="#contact" class="header__nav-link button">
+                    <span class="button__icon"
+                      ><svg
+                        width="20"
+                        height="16"
+                        viewBox="0 0 20 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.5 2.28406C2.15625 2.28406 1.875 2.56339 1.875 2.90479V3.76217L8.61328 9.25563C9.42188 9.91515 10.582 9.91515 11.3906 9.25563L18.125 3.76217V2.90479C18.125 2.56339 17.8438 2.28406 17.5 2.28406H2.5ZM1.875 6.17138V12.8365C1.875 13.1779 2.15625 13.4572 2.5 13.4572H17.5C17.8438 13.4572 18.125 13.1779 18.125 12.8365V6.17138L12.5781 10.6949C11.0781 11.917 8.91797 11.917 7.42188 10.6949L1.875 6.17138ZM0 2.90479C0 1.53531 1.12109 0.421875 2.5 0.421875H17.5C18.8789 0.421875 20 1.53531 20 2.90479V12.8365C20 14.2059 18.8789 15.3194 17.5 15.3194H2.5C1.12109 15.3194 0 14.2059 0 12.8365V2.90479Z"
+                          class="button__icon-path"
+                        />
+                      </svg>
+                    </span>
+                    <span class="button__text">Contact -</span>
+                  </a>
+                </li>
+                <li class="header__nav-item header__nav-item--x">
+                  <a
+                    href="https://x.com/poyonta_web"
+                    target="_blank"
+                    class="header__nav-link button button--x"
+                  >
+                    <span class="button__icon button__icon--x">
+                      <svg
+                        width="20"
+                        height="21"
+                        viewBox="0 0 1200 1227"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+                          class="button__icon-path button__icon-path--x"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="fv">
+          <picture class="fv__img">
+            <source media="(min-width: 768px)" srcset="./img/fv-image.webp" />
+            <img
+              src="./img/sp_img.webp"
+              alt="デスクの上にパソコンとタブレットが乗っています。"
+              decoding="async"
+              width="2924"
+              height="3899"
+            />
+          </picture>
+          <div class="fv__contents">
+            <h1 class="fv__heading">
+              <span class="fv__heading-main">Web Coder -</span>
+              <span class="fv__heading-sub"
+                >フリーランスWebコーダー志望の” やなぎ ”です。<br />一つひとつの制作を大切に、コーディングを学んでいます。</span
+              >
+            </h1>
+          </div>
+        </div>
+
+        <section id="skills" class="section skills">
+          <div class="section__inner">
+            <h2 class="section__head">
+              <span class="section__head-main">My Skills -</span>
+              <span class="section__head-sub">習得したスキル</span>
+            </h2>
+            <p class="section__lead-text">
+              これまでに学んできた、対応可能な言語です。
+            </p>
+            <ul class="skills__list">
+              <li class="skills__item">
+                <div class="skills__icon">
+                  <img src="./img/skill_icon/icon_html.svg" alt="" />
+                </div>
+                <span class="skills__name">HTML</span>
+              </li>
+              <li class="skills__item">
+                <div class="skills__icon">
+                  <img src="./img/skill_icon/icon_css.svg" alt="" />
+                </div>
+                <span class="skills__name">CSS</span>
+              </li>
+              <li class="skills__item">
+                <div class="skills__icon">
+                  <img src="./img/skill_icon/icon_sass.svg" alt="" />
+                </div>
+                <span class="skills__name">Sass</span>
+              </li>
+              <li class="skills__item">
+                <div class="skills__icon">
+                  <img src="./img/skill_icon/icon_javascript.svg" alt="" />
+                </div>
+                <span class="skills__name">JavaScript</span>
+              </li>
+              <li class="skills__item">
+                <div class="skills__icon">
+                  <img src="./img/skill_icon/icon_jquery.svg" alt="" />
+                </div>
+                <span class="skills__name">JQuery</span>
+              </li>
+              <li class="skills__item">
+                <div class="skills__icon">
+                  <img src="./img/skill_icon/icon_figma.png" alt="" />
+                </div>
+                <span class="skills__name">Figma</span>
+              </li>
+              <li class="skills__item">
+                <div class="skills__icon">
+                  <img src="./img/skill_icon/icon_github.png" alt="" />
+                </div>
+                <span class="skills__name">GitHub</span>
+              </li>
+              <!-- <li class="skills__item">
+                <div class="skills__icon">
+                  <img src="./img/skill_icon/icon_php.svg" alt="" />
+                </div>
+                <span class="skills__name">PHP</span>
+              </li>
+              <li class="skills__item">
+                <div class="skills__icon">
+                  <img src="./img/skill_icon/icon_sql.svg" alt="" />
+                </div>
+                <span class="skills__name">SQL</span>
+              </li> -->
+            </ul>
+          </div>
+        </section>
+
+        <section id="works" class="section works">
+          <div class="section__inner">
+            <h2 class="section__head">
+              <span class="section__head-main">Works -</span>
+              <span class="section__head-sub">制作物</span>
+            </h2>
+            <p class="section__lead-text">
+              これまで学習してきたWebサイトの一例です。当サイトも自分で制作しており、実績の一つとしてご覧いただけます。
+            </p>
+
+            <div class="works__contents">
+              <ul class="works__list">
+                <li class="works__item">
+                  <a href="./works/onomichi.html" class="works__card">
+                    <div class="works__image">
+                      <picture>
+                        <source
+                          srcset="../img/project/onomichi-top.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="../img/project/onomichi-top.jpg"
+                          class="works__item-img"
+                          alt="尾道観光サイトのトップページ"
+                        />
+                      </picture>
+                    </div>
+
+                    <h3 class="works__item-name">尾道観光サイト</h3>
+                    <p class="works__item-link">詳しく見る</p>
+                  </a>
+                </li>
+
+                <li class="works__item">
+                  <a href="./works/e-tiga.html" class="works__card">
+                    <div class="works__image">
+                      <picture>
+                        <source
+                          srcset="../img/project/e-tiga-top.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="../img/project/e-tiga-top.jpg"
+                          class="works__item-img"
+                          alt="e-tiga コーポレートサイトのトップページ"
+                        />
+                      </picture>
+                    </div>
+
+                    <h3 class="works__item-name">e-tiga コーポレートサイト</h3>
+                    <p class="works__item-link">詳しく見る</p>
+                  </a>
+                </li>
+
+                <li class="works__item">
+                  <a href="./works/sobolon.html" class="works__card">
+                    <div class="works__image">
+                      <picture>
+                        <source
+                          srcset="../img/project/sobolon-top.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="../img/project/sobolon-top.jpg"
+                          class="works__item-img"
+                          alt="Sobolonハンドメイドアクセサリーショップのトップページ"
+                        />
+                      </picture>
+                    </div>
+
+                    <h3 class="works__item-name">
+                      Sobolon ハンドメイドアクセサリー
+                    </h3>
+                    <p class="works__item-link">詳しく見る</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section about">
+          <div class="section__inner">
+            <h2 class="section__head">
+              <span class="section__head-main">About -</span>
+              <span class="section__head-sub">私について</span>
+            </h2>
+            <div class="about__container">
+              <div class="about__img">
+                <img src="./img/about_me.png" alt="私の自画像イラスト" width="600" height="600" />
+              </div>
+
+              <div class="about__text-contents">
+                <p class="about__text">
+                  測量事務に10年間従事し、図面作成や細かな作業に携わってきました。<br />
+                  現在はWebコーダーを目指し、HTML・CSS・JavaScriptを中心に学習しています。
+                </p>
+
+                <p class="about__text">
+                  見やすく使いやすいサイト制作を目指し、日々コーディングスキルの向上に取り組んでいます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section contact">
+          <div class="section__inner">
+            <h2 class="section__head">
+              <span class="section__head-main">Contact -</span>
+              <span class="section__head-sub">お問い合わせ</span>
+            </h2>
+            <p class="contact__text">
+              小さなご質問でもお気軽にどうぞ。<br />いただいたご連絡には、3日以内にお返事いたします。状況により即日対応できる場合もございます。
+            </p>
+            <form
+              class="contact__form"
+              action="https://docs.google.com/forms/d/1wxgxeuCiGroGb6D0AkHOj52-wFo_a72LHb8ZfSSlgHc/formResponse"
+              method="POST"
+            >
+              <!-- 件名 -->
+              <div class="contact__item">
+                <label for="subject" class="contact__label">件名</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="entry.1060447912"
+                  placeholder="例：制作依頼について"
+                  class="contact__input-field"
+                />
+              </div>
+
+              <!-- 問い合わせ種別 -->
+              <div class="contact__item">
+                <label for="type" class="contact__label">問い合わせ種別</label>
+                <select
+                  id="type"
+                  name="entry.1830113722"
+                  class="contact__input-field"
+                >
+                  <option value="">選択してください</option>
+                  <option value="質問">質問</option>
+                  <option value="要望">要望</option>
+                </select>
+              </div>
+
+              <!-- お名前 -->
+              <div class="contact__item">
+                <label for="name" class="contact__label">
+                  お名前 <span class="contact__must">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="entry.1457223307"
+                  placeholder="田中 太郎"
+                  class="contact__input-field"
+                  required
+                />
+              </div>
+
+              <!-- ふりがな -->
+              <div class="contact__item">
+                <label for="kana" class="contact__label">ふりがな</label>
+                <input
+                  type="text"
+                  id="kana"
+                  name="entry.275673241"
+                  placeholder="たなか たろう"
+                  class="contact__input-field"
+                />
+              </div>
+
+              <!-- メールアドレス -->
+              <div class="contact__item">
+                <label for="email" class="contact__label">
+                  メールアドレス <span class="contact__must">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="entry.229926600"
+                  placeholder="sample@example.com"
+                  class="contact__input-field"
+                  required
+                />
+              </div>
+
+              <!-- お問い合わせ内容 -->
+              <div class="contact__item">
+                <label for="contact__message" class="contact__label">
+                  お問い合わせ内容 <span class="contact__must">*</span>
+                </label>
+                <textarea
+                  id="contact__message"
+                  name="entry.366167014"
+                  rows="5"
+                  placeholder="お問い合わせ内容をご記入ください"
+                  class="contact__input-field contact__input-field-w"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- プライバシー同意チェックボックス -->
+              <div class="contact__item">
+                <label class="contact__privacy">
+                  <input type="checkbox" name="privacy" required />
+                  個人情報はお問い合わせへの回答のみに使用し、他の目的には利用いたしません。
+                  <span class="contact__must">*</span>
+                </label>
+              </div>
+
+              <!-- 送信ボタン -->
+              <button type="submit" class="contact__button">送　信</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <a href="" id="page-top" class="toTop"></a>
+
+    <footer class="footer">
+      <small class="footer__copy"
+        >&copy;2026 Yanagi's Portfolio All rights reserved.</small
+      >
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
